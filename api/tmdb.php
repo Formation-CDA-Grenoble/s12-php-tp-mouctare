@@ -11,15 +11,16 @@ const MY_TV_SHOWS = [
 function getTvShow($id) {
     $url = 'https://api.themoviedb.org/3/tv/' . $id . '?api_key=' . $_ENV['TMDB_API_KEY'] . '&language=en-US';
     $rawData = file_get_contents($url);
-    if ($rawData === false){
-    var_dump($url) ;
-    } else {
-        var_dump($rawData['name']);
-        $rawData =  json_decode($rawData, true);
+    $rawData =  json_decode($rawData);
+    
+    var_dump($rawData);
+   }
+     //   $rawData =  json_decode($rawData);
+
     
 
-}
-}
+
+
 
     
 
